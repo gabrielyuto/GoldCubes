@@ -2,10 +2,11 @@
 ## Atividade 2 - Aplicação gráfica 3D com animações
 
 ### Integrantes:
+Nomes:
 - Fernando Schroder
 - Gabriel Yuto Munakata
 
-Registro Acadêmico:
+Registros Acadêmico:
 - 11201921885
 - 11201721879
 
