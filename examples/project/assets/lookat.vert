@@ -7,8 +7,6 @@ uniform mat4 modelMatrix;
 uniform mat4 viewMatrix;
 uniform mat4 projMatrix;
 
-uniform float angle;
-
 out vec4 fragColor;
 
 void main() {

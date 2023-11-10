@@ -34,6 +34,8 @@ private:
   GLint m_projMatrixLocation{};
   GLint m_modelMatrixLocation{};
   GLint m_colorLocation{};
+  GLint m_lightPosition{};
+  GLint m_shadowRadius{};
 
   Camera m_camera;
   float m_dollySpeed{};
