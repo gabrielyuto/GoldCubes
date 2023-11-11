@@ -79,10 +79,11 @@ void Window::onPaint() {
 
   abcg::glBindVertexArray(m_VAO);
 
-  const int limit{8};
-
-  for (int x = -4; x < limit; x++) {
-    for (int z = -4; z < limit; z++) {
+  const int limit_sup{50};
+  const int limit_inf{-50};
+  
+  for (int x = limit_inf; x < limit_sup; x++) {
+    for (int z = limit_inf; z < limit_sup; z++) {
       glm::mat4 model{1.0f};
       model = glm::translate(model, glm::vec3(x, 0.5f, z));
       model = glm::rotate(model, glm::radians(10.0f), glm::vec3(0, 1, 0));
@@ -90,13 +91,12 @@ void Window::onPaint() {
 
       abcg::glUniformMatrix4fv(m_modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
       abcg::glUniform4f(m_colorLocation, x, (x + z), z, 1.0f);
-      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
-                           nullptr);
+      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, nullptr);                  
     }
   }
 
-  for (int x = -4; x < limit; x++) {
-    for (int z = -4; z < limit; z++) {
+  for (int x = limit_inf; x < limit_sup; x++) {
+    for (int z = limit_inf; z < limit_sup; z++) {
       glm::mat4 model{1.0f};
       model = glm::translate(model, glm::vec3(x, 0.7f, z));
       model = glm::rotate(model, glm::radians(40.0f), glm::vec3(0, 1, 0));
@@ -104,13 +104,12 @@ void Window::onPaint() {
 
       abcg::glUniformMatrix4fv(m_modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
       abcg::glUniform4f(m_colorLocation, 0, 0, 0, 1.0f);
-      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
-                           nullptr);
+      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, nullptr);
     }
   }
 
-  for (int x = -4; x < limit; x++) {
-    for (int z = -4; z < limit; z++) {
+  for (int x = limit_inf; x < limit_sup; x++) {
+    for (int z = limit_inf; z < limit_sup; z++) {
       glm::mat4 model{1.0f};
       model = glm::translate(model, glm::vec3(x, 1.0f, z));
       model = glm::rotate(model, glm::radians(70.0f), glm::vec3(0, 1, 0));
@@ -118,13 +117,12 @@ void Window::onPaint() {
 
       abcg::glUniformMatrix4fv(m_modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
       abcg::glUniform4f(m_colorLocation, x, (x + z), z, 1.0f);
-      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
-                           nullptr);
+      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, nullptr);
     }
   }
 
-  for (int x = -4; x < limit; x++) {
-    for (int z = -4; z < limit; z++) {
+  for (int x = limit_inf; x < limit_sup; x++) {
+    for (int z = limit_inf; z < limit_sup; z++) {
       glm::mat4 model{1.0f};
       model = glm::translate(model, glm::vec3(x, 1.6f, z));
       model = glm::rotate(model, glm::radians(80.0f), glm::vec3(0, 1, 0));
@@ -132,13 +130,12 @@ void Window::onPaint() {
 
       abcg::glUniformMatrix4fv(m_modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
       abcg::glUniform4f(m_colorLocation, 0, 0, 0, 1.0f);
-      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
-                           nullptr);
+      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, nullptr);
     }
   }
 
-  for (int x = -4; x < limit; x++) {
-    for (int z = -4; z < limit; z++) {
+  for (int x = limit_inf; x < limit_sup; x++) {
+    for (int z = limit_inf; z < limit_sup; z++) {
       glm::mat4 model{1.0f};
       model = glm::translate(model, glm::vec3(x, 1.9f, z));
       model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0, 1, 0));
@@ -146,20 +143,24 @@ void Window::onPaint() {
 
       abcg::glUniformMatrix4fv(m_modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
       abcg::glUniform4f(m_colorLocation, x, (x + z), z, 1.0f);
-      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
-                           nullptr);
+      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, nullptr);
     }
   }
 
-  glm::mat4 model{1.0f};
-  model = glm::translate(model, glm::vec3(-3.0f, 0.5f, 0.0f));
-  model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0, 1, 0));
-  model = glm::scale(model, glm::vec3(0.1f));
+  const int count_gold_cube{10};
 
-  abcg::glUniformMatrix4fv(m_modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
-  abcg::glUniform4f(m_colorLocation, 1.0f, 0.25f, 0.25f, 1.0f);
-  abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
-                       nullptr);
+  for (int a = 0; a < count_gold_cube; a++) {
+    for(int b = 0; b  < count_gold_cube; b++){
+      glm::mat4 model{1.0f};
+      model = glm::translate(model, glm::vec3(a/2, 0.5f, b/2));
+      model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0, 1, 0));
+      model = glm::scale(model, glm::vec3(0.1f));
+
+      abcg::glUniformMatrix4fv(m_modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
+      abcg::glUniform4f(m_colorLocation, 255, 223, 0.0, 1.0f);
+      abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, nullptr);
+    }
+  }
 
   m_ground.paint();
 
