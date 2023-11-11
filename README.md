@@ -13,6 +13,13 @@ Registros Acadêmico:
 ### Descrição da aplicação
 O objetivo desta aplicação é criar um cenário de um labirinto em cubos, de modo que existem cubos dourados dentro deste labirito que precisam ser encontrados.
 
+
+<div align="center">
+
+![Aplicação](./images/image.png)
+
+</div>
+
 A aplicação teve como base o projeto LookAt apresentado durante as aulas de laboratório. Dessa forma, foi construído um cenário em que é gerado um "solo" com base na classe ground.cpp e ground.hpp, e também é construído a classe camera.cpp e camera.hpp para se obter uma visão do espaço da camera a partir do espaço do mundo.
 
 ### Implementação
@@ -49,8 +56,11 @@ Adicionamos uma pequena rotação para criar um efeito mais interessante para a 
 Um esquema detalhando a contrução do cenário é descrito na figura abaixo:
 
 
-FIGURA
+<div align="center">
 
+![Aplicação](./images/image2.png)
+
+</div>
 
 Tendo como base a geração dos primeiros cubos, repetimos o mesmo loop para gerar cubos acima dos mesmos, de modo a se construir paredes de cubos. A diferença se encontra no posicionamento no eixo y, a rotação dos objetos e a cor atribuido.
 
