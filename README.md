@@ -1,6 +1,8 @@
 # Computação Gráfica - UFABC
 ## Atividade 2 - Aplicação gráfica 3D com animações
 
+Link WebAssembly: 
+
 ### Integrantes:
 Nomes:
 - Fernando Schroder

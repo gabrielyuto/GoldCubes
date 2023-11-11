@@ -25,8 +25,8 @@ compile_commands.json
 
 # Emscripten output
 public/*.data
-public/*.js
-public/*.wasm
+# public/*.js
+# public/*.wasm
 
 # Git
 *.stackdump
